@@ -19,7 +19,7 @@ export const useHome = () => {
   }
   
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080");
+    const ws = new WebSocket(import.meta.env.BACKEND_SERVER_URL as string);
     wsRef.current = ws
 
     ws.onmessage = e => {
