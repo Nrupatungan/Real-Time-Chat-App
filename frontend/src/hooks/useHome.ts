@@ -1,6 +1,5 @@
 import { FormEvent, useEffect, useRef, useState } from "react"
 
-
 export const useHome = () => {
   const [room, setRoom] = useState("")
   const [user, setUser] = useState<number>()
@@ -19,7 +18,7 @@ export const useHome = () => {
   }
   
   useEffect(() => {
-    const ws = new WebSocket(import.meta.env.BACKEND_SERVER_URL as string);
+    const ws = new WebSocket(import.meta.env.VITE_BACKEND_SERVER_URL);
     wsRef.current = ws
 
     ws.onmessage = e => {
